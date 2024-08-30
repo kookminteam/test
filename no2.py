@@ -1,25 +1,13 @@
 def abstract(arr):
-    arr = set(arr)
-    return list(arr)
+    return list(set(arr))
 
 
 def merge(arr1, arr2):
-    tmp = set(arr1 + arr2)
-    return list(tmp)
+    return list(set(arr1 + arr2))
 
 
 def cross(arr1, arr2):
-    arr1 = abstract(arr1)
-    arr2 = abstract(arr2)
-
-    answer = []
-
-    for i in arr1:
-        if i in set(arr2):
-            answer.append(i)
-
-    return answer
-
+    return list(set(arr1) & set(arr2))
 
 arr1 = list(map(int, input().split()))
 arr2 = list(map(int, input().split()))
